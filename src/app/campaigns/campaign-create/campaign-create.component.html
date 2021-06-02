@@ -1,0 +1,13 @@
+<div class="container">
+    <form [formGroup]="campaignForm" class="w-50" (ngSubmit)="addCampaign()">
+        <div class="mb-3">
+          <label class="form-label">Campaign Name</label>
+          <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">CPC</label>
+          <input type="number" class="form-control" formControlName="cpc">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>

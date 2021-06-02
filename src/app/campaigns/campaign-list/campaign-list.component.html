@@ -1,0 +1,23 @@
+<div class="container">
+  <button class="btn btn-danger m-2" routerLink="/create">New Campaign</button>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Campaign Name</th>
+            <th scope="col">CPC</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let campaign of campaigns">
+            <th scope="row">{{ campaign.id }}</th>
+            <td><a routerLink="/campaign/{{ campaign.id }}">{{ campaign.name }}</a></td>
+            <td>{{ campaign.cpc }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="delete(campaign)">X</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
