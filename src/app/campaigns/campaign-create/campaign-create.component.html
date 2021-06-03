@@ -1,5 +1,6 @@
 <div class="container">
     <form [formGroup]="campaignForm" class="w-50" (ngSubmit)="addCampaign()">
+      <h2>Basic Info</h2>
         <div class="mb-3">
           <label class="form-label">Campaign Name</label>
           <input type="text" class="form-control" formControlName="name">
@@ -8,6 +9,21 @@
           <label class="form-label">CPC</label>
           <input type="number" class="form-control" formControlName="cpc">
         </div>
+        <div class="mb-3">
+          <label class="form-label">Budget</label>
+          <input type="number" class="form-control" formControlName="budget">
+        </div>
+        <div formGroupName="scheduling">
+          <h2>Scheduling</h2>
+          <div class="mb-3">
+            <label class="form-label">Start Date</label>
+            <input type="text" class="form-control" formControlName="startDate">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">End Date</label>
+            <input type="text" class="form-control" formControlName="endDate">
+          </div>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+    </form>
 </div>

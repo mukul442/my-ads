@@ -1,24 +1,14 @@
 {
   "campaigns": [
     {
-      "name": "mukul_campaign",
-      "cpc": "0.2",
-      "id": 10
-    },
-    {
-      "name": "bhartiu",
-      "cpc": 12,
-      "id": 11
-    },
-    {
-      "name": "nikku",
-      "cpc": 12,
-      "id": 12
-    },
-    {
-      "name": "first_campaign",
-      "cpc": 0.4,
-      "id": 13
+      "name": "second campaign",
+      "cpc": 0.3,
+      "budget": 10,
+      "scheduling": {
+        "startDate": "10/04/1988",
+        "endDate": "10/04/2000"
+      },
+      "id": 1
     }
   ]
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Campaign } from './campaign';
-import { CAMPAIGNS } from './mock-campaigns';
 import { Observable, of} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 

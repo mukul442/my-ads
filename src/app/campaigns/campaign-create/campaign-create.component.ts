@@ -12,7 +12,12 @@ export class CampaignCreateComponent implements OnInit {
 
   campaignForm = new FormGroup({
     name: new FormControl(''),
-    cpc: new FormControl('')
+    cpc: new FormControl(''),
+    budget: new FormControl(''),
+    scheduling: new FormGroup({
+      startDate: new FormControl(''),
+      endDate: new FormControl('')
+    })
   });
 
   constructor(private campaignService: CampaignService, private route: Router) { }
