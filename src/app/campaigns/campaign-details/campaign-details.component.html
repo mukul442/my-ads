@@ -4,9 +4,9 @@
         <p><span>ID: </span>{{ campaign.id }}</p>
         <input class="form-control mt-3" type="text" placeholder="Campaign Name" [(ngModel)]="campaign.name">
         <input class="form-control mt-3" type="text" placeholder="Campaign CPC" [(ngModel)]="campaign.cpc">
-        <input class="form-control mt-3" type="text" placeholder="Campaign Budget" [(ngModel)]="campaign.budget">
-        <input class="form-control mt-3" type="text" placeholder="Start Date" [(ngModel)]="campaign.startDate">
-        <input class="form-control mt-3" type="text" placeholder="End Date" [(ngModel)]="campaign.endDate">
+        <input class="form-control mt-3" type="number" placeholder="Campaign Budget" [(ngModel)]="campaign.budget">
+        <input class="form-control mt-3" type="date" placeholder="Start Date" [(ngModel)]="campaign.scheduling.startDate">
+        <input class="form-control mt-3" type="date" placeholder="End Date" [(ngModel)]="campaign.scheduling.endDate">
         <div class="d-flex">
             <button class="btn btn-secondary mt-3" (click)="goBack()">go back</button>
             <button class="btn btn-info mt-3" (click)="updateCampaign(campaign)">Update</button>

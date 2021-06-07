@@ -3,7 +3,10 @@ export interface Campaign {
     name: string;
     cpc: number;
     budget: number;
-    pacing: boolean | string;
-    startDate: string | number;
-    endDate: string | number;
+    scheduling: Scheduling;
+}
+
+export interface Scheduling {
+    startDate: string;
+    endDate: string;
 }

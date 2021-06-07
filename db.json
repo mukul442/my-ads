@@ -9,6 +9,26 @@
         "endDate": "10/04/2000"
       },
       "id": 1
+    },
+    {
+      "name": "my third camop",
+      "cpc": 0.4,
+      "budget": 12,
+      "scheduling": {
+        "startDate": "10/05/1996",
+        "endDate": "12/05/2000"
+      },
+      "id": 2
+    },
+    {
+      "name": "third camp30",
+      "cpc": 0.3,
+      "budget": 12,
+      "scheduling": {
+        "startDate": "10/04/1995",
+        "endDate": "20/03/2020"
+      },
+      "id": 3
     }
   ]
 }

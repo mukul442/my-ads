@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CampaignService {
 
-  private campaignUrl = "http://localhost:3000/campaigns";
+  private campaignUrl = "http://127.0.0.1:8000/campaign";
 
   constructor(private http: HttpClient) { }
 
@@ -25,12 +25,12 @@ export class CampaignService {
 
   /** PUT request **/
   updateCampaign(campaign: Campaign): Observable<any> {
-    return this.http.put(this.campaignUrl + '/' + campaign.id, campaign);
+    return this.http.put(this.campaignUrl + '/' + campaign.id + '/', campaign);
   }
 
   /*POST request*/
   addCampaign(campaign: Campaign): Observable<Campaign>{
-    return this.http.post<Campaign>(this.campaignUrl, campaign);
+    return this.http.post<Campaign>(this.campaignUrl + '/', campaign);
   }
 
   /*Delete request*/
