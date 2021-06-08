@@ -5,6 +5,8 @@ from . import views
 
 router = DefaultRouter()
 router.register('campaign', views.CampaignView, basename='campaign')
+router.register('content', views.ContentView, basename='content')
+
 
 urlpatterns = [
     path('', include(router.urls))

@@ -1,12 +1,29 @@
 <div class="container">
-    <h3>Campaign Details</h3>
+    <h3>Campaign Settings</h3>
     <div class="w-50 m-3" *ngIf="campaign">
+        <h2>Basic Info</h2>
         <p><span>ID: </span>{{ campaign.id }}</p>
-        <input class="form-control mt-3" type="text" placeholder="Campaign Name" [(ngModel)]="campaign.name">
-        <input class="form-control mt-3" type="text" placeholder="Campaign CPC" [(ngModel)]="campaign.cpc">
-        <input class="form-control mt-3" type="number" placeholder="Campaign Budget" [(ngModel)]="campaign.budget">
-        <input class="form-control mt-3" type="date" placeholder="Start Date" [(ngModel)]="campaign.scheduling.startDate">
-        <input class="form-control mt-3" type="date" placeholder="End Date" [(ngModel)]="campaign.scheduling.endDate">
+        <div class="mb-3">
+            <label class="form-label">Campaign Name</label>
+            <input class="form-control mt-3" type="text" placeholder="Campaign Name" [(ngModel)]="campaign.name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CPC</label>
+            <input class="form-control mt-3" type="text" placeholder="Campaign CPC" [(ngModel)]="campaign.cpc">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Budget</label>
+            <input class="form-control mt-3" type="number" placeholder="Campaign Budget" [(ngModel)]="campaign.budget">
+        </div>
+        <h2>Scheduling</h2>
+        <div class="mb-3">
+            <label class="form-label">Start Date</label>
+            <input class="form-control mt-3" type="date" placeholder="Start Date" [(ngModel)]="campaign.scheduling.startDate">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">End Date</label>
+            <input class="form-control mt-3" type="date" placeholder="End Date" [(ngModel)]="campaign.scheduling.endDate">
+        </div>
         <div class="d-flex">
             <button class="btn btn-secondary mt-3" (click)="goBack()">go back</button>
             <button class="btn btn-info mt-3" (click)="updateCampaign(campaign)">Update</button>

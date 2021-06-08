@@ -6,7 +6,7 @@ import { CampaignListComponent } from './campaign-list/campaign-list.component';
 
 const routes: Routes = [
   {path: '', component: CampaignListComponent},
-  {path: 'campaign/:id', component: CampaignDetailsComponent},
+  {path: 'campaign/:id/settings', component: CampaignDetailsComponent}, //need to make child urls for campaign details
   {path: 'create', component: CampaignCreateComponent}
 ];
 
