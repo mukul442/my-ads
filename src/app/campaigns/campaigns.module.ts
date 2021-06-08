@@ -8,13 +8,21 @@ import { CampaignsRoutingModule } from './campaigns-routing.module';
 import { CampaignListComponent } from './campaign-list/campaign-list.component';
 import { CampaignDetailsComponent } from './campaign-details/campaign-details.component';
 import { CampaignCreateComponent } from './campaign-create/campaign-create.component';
+import { CampaignPerformanceComponent } from './campaign-performance/campaign-performance.component';
+import { CampaignContentComponent } from './campaign-content/campaign-content.component';
+import { CampaignWidgetsComponent } from './campaign-widgets/campaign-widgets.component';
+import { CampaignHeaderComponent } from './campaign-header/campaign-header.component';
 
 
 @NgModule({
   declarations: [
     CampaignListComponent,
     CampaignDetailsComponent,
-    CampaignCreateComponent
+    CampaignCreateComponent,
+    CampaignPerformanceComponent,
+    CampaignContentComponent,
+    CampaignWidgetsComponent,
+    CampaignHeaderComponent
   ],
   imports: [
     CommonModule,
