@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Content } from '../campaign';
+import { CONTENT } from '../mock-content';
 
 @Component({
   selector: 'app-campaign-content',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./campaign-content.component.css']
 })
 export class CampaignContentComponent implements OnInit {
+
+  contents: Content[] = CONTENT;
+  modalTitle:string = "Add Content";
 
   constructor() { }
 

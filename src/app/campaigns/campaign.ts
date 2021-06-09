@@ -11,3 +11,13 @@ export interface Scheduling {
     endDate: string;
 }
 
+export interface Content {
+    id:number;
+    campaign:number;
+    url:string;
+    title:string;
+    brand_name:string;
+    description:string;
+    added_date:string;
+}
+
