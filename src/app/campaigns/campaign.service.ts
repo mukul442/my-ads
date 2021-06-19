@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Campaign } from './campaign';
+import { Campaign, Content } from './campaign';
 import { Observable, of} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CampaignService {
 
-  private campaignUrl = "http://127.0.0.1:8000/campaign";
+  private campaignUrl = "http://127.0.0.1:8000/campaign/";
+  private contentUrl = "http://127.0.0.1:8000/content/";
 
   constructor(private http: HttpClient) { }
 
@@ -19,23 +20,35 @@ export class CampaignService {
   /** GET campaign by id. Will 404 if id not found */
 
   getCampaign(id: number): Observable<Campaign> {
-    const url = `${this.campaignUrl}/${id}`;
+    const url = `${this.campaignUrl}${id}/`;
     return this.http.get<Campaign>(url);
   }
 
   /** PUT request **/
   updateCampaign(campaign: Campaign): Observable<any> {
-    return this.http.put(this.campaignUrl + '/' + campaign.id + '/', campaign);
+    return this.http.put(this.campaignUrl + campaign.id + '/', campaign);
   }
 
   /*POST request*/
   addCampaign(campaign: Campaign): Observable<Campaign>{
-    return this.http.post<Campaign>(this.campaignUrl + '/', campaign);
+    return this.http.post<Campaign>(this.campaignUrl, campaign);
   }
 
   /*Delete request*/
   deleteCampaign(id: number): Observable<Campaign> {
-    const url = `${this.campaignUrl}/${id}`;
+    const url = `${this.campaignUrl}${id}/`;
     return this.http.delete<Campaign>(url);
   }
+
+  /*Content Https*/
+  getContents(id: number): Observable<Campaign> {
+    const url = `${this.campaignUrl}${id}/`;
+    return this.http.get<Campaign>(url);
+  }
+
+  /* Add Content */
+  addContent(content: Content): Observable<Content> {
+    return this.http.post<Content>(this.contentUrl, content);
+  }
+
 }

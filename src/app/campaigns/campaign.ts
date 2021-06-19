@@ -4,6 +4,7 @@ export interface Campaign {
     cpc: number;
     budget: number;
     scheduling: Scheduling;
+    content: Content[];
 }
 
 export interface Scheduling {
@@ -13,7 +14,7 @@ export interface Scheduling {
 
 export interface Content {
     id:number;
-    campaign:number;
+    campaign: number;
     url:string;
     title:string;
     brand_name:string;

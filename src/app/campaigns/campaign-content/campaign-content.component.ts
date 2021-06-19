@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Content } from '../campaign';
-import { CONTENT } from '../mock-content';
+import { Campaign, Content } from '../campaign';
+import { CampaignService } from '../campaign.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-campaign-content',
@@ -9,12 +10,19 @@ import { CONTENT } from '../mock-content';
 })
 export class CampaignContentComponent implements OnInit {
 
-  contents: Content[] = CONTENT;
+  campaign: Campaign | undefined;
   modalTitle:string = "Add Content";
 
-  constructor() { }
+  constructor(private campaignService: CampaignService,
+    private router: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.showContents();
+  }
+
+  showContents() {
+    const id = Number(this.router.snapshot.paramMap.get('id'));
+    return this.campaignService.getContents(id).subscribe(response => this.campaign = response);
   }
 
 }

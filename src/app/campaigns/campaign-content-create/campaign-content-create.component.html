@@ -1,11 +1,11 @@
-<form>
+<form [formGroup]="contentForm" (ngSubmit)="addContent()">
     <div class="container">
         <div class="row mb-2">
             <div class="col-4">
                 <label class="form-label">Destination Url</label>
             </div>
             <div class="col-8">
-                <input type="url" class="form-control" placeholder="Destination Url">
+                <input type="url" class="form-control" placeholder="Destination Url" formControlName="url">
             </div>
         </div>
         <div class="row mb-2">
@@ -13,7 +13,7 @@
                 <label class="form-label">Content Title</label>
             </div>
             <div class="col-8">
-                <input type="text" class="form-control" placeholder="Content Title">
+                <input type="text" class="form-control" placeholder="Content Title" formControlName="title">
             </div>
         </div>
         <div class="row mb-2">
@@ -21,7 +21,7 @@
                 <label class="form-label">Brand Name</label>
             </div>
             <div class="col-8">
-                <input type="text" class="form-control" placeholder="Brand Name">
+                <input type="text" class="form-control" placeholder="Brand Name" formControlName="brand">
             </div>
         </div>
         <div class="row mb-2">
@@ -29,7 +29,7 @@
                 <label class="form-label">Description</label>
             </div>
             <div class="col-8">
-                <input type="text" class="form-control" placeholder="Description">
+                <input type="text" class="form-control" placeholder="Description" formControlName="description">
             </div>
         </div>
         <button type="submit" class="btn btn-outline-danger">Submit</button>
