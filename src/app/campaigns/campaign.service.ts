@@ -46,9 +46,28 @@ export class CampaignService {
     return this.http.get<Campaign>(url);
   }
 
+  /** GET campaign by id. Will 404 if id not found */
+
+  getContent(id: number): Observable<Content> {
+    const url = `${this.contentUrl}${id}/`;
+    return this.http.get<Content>(url);
+  }
+
+
   /* Add Content */
   addContent(content: Content): Observable<Content> {
     return this.http.post<Content>(this.contentUrl, content);
+  }
+
+  /* Edit content */
+  updateContent(content: Content): Observable<any> {
+    return this.http.put<Content>(this.contentUrl + content.id + '/', content)
+  }
+
+  /* Delete Content */
+  deleteContent(id: number): Observable<Content> {
+    const url = `${this.contentUrl}${id}/`;
+    return this.http.delete<Content>(url);
   }
 
 }

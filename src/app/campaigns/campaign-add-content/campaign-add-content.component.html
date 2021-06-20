@@ -1,0 +1,27 @@
+<app-campaign-header></app-campaign-header>
+<div class="container">
+    <form [formGroup]="contentForm" class="w-50" (ngSubmit)="addContent()">
+      <h2>Create Content</h2>
+      <div class="mb-3" hidden>
+        <label class="form-label">Campaign</label>
+        <input type="number" class="form-control" formControlName="campaign">
+      </div>
+        <div class="mb-3">
+          <label class="form-label">Content Url</label>
+          <input type="url" class="form-control" formControlName="url">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Content Title</label>
+          <input type="text" class="form-control" formControlName="title">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Content Brand Name</label>
+          <input type="text" class="form-control" formControlName="brand_name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Content Description</label>
+            <input type="text" class="form-control" formControlName="description">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

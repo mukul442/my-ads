@@ -12,8 +12,8 @@ import { CampaignPerformanceComponent } from './campaign-performance/campaign-pe
 import { CampaignContentComponent } from './campaign-content/campaign-content.component';
 import { CampaignWidgetsComponent } from './campaign-widgets/campaign-widgets.component';
 import { CampaignHeaderComponent } from './campaign-header/campaign-header.component';
-import { CampaignContentCreateComponent } from './campaign-content-create/campaign-content-create.component';
-
+import { CampaignAddContentComponent } from './campaign-add-content/campaign-add-content.component';
+import { CampaignEditContentComponent } from './campaign-edit-content/campaign-edit-content.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { CampaignContentCreateComponent } from './campaign-content-create/campai
     CampaignContentComponent,
     CampaignWidgetsComponent,
     CampaignHeaderComponent,
-    CampaignContentCreateComponent
+    CampaignAddContentComponent,
+    CampaignEditContentComponent
   ],
   imports: [
     CommonModule,
