@@ -12,6 +12,7 @@ import { CampaignService } from '../campaign.service';
 export class CampaignDetailsComponent implements OnInit {
 
   campaign: Campaign | undefined;
+  campaign_id = Number(this.route.snapshot.paramMap.get('id'));
   
   constructor( 
     private route: ActivatedRoute,

@@ -1,15 +1,22 @@
 <app-campaign-header></app-campaign-header>
 <div class="container-fluid">
   <button class="btn btn-danger m-2" routerLink="/create">New Campaign</button>
-    <table class="table">
+    <div class="table-responsive">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Campaign Name</th>
-            <th scope="col">CPC</th>
-            <th scope="col">Budget</th>
+            <th scope="col">Name</th>  
             <th scope="col">Start</th>
             <th scope="col">End</th>
+            <th scope="col">Turn Campaign On/Off </th>
+            <th scope="col">Status</th>
+            <th scope="col">CPC</th>
+            <th scope="col">Budget</th>
+            <th scope="col">Clicks</th>
+            <th scope="col">Conversion</th>
+            <th scope="col">Cost</th>
+            <th scope="col">CTR</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -17,10 +24,18 @@
           <tr *ngFor="let campaign of campaigns">
             <th scope="row">{{ campaign.id }}</th>
             <td>{{ campaign.name }}</td>
-            <td>{{ campaign.cpc }}</td>
-            <td>{{ campaign.budget | currency }}</td>
             <td>{{ campaign.scheduling.startDate }}</td>
             <td>{{ campaign.scheduling.endDate }}</td>
+            <td>
+                <input class="form-check-input" type="checkbox" checked>
+            </td>
+            <td>Credit Card Missing</td>
+            <td>{{ campaign.cpc }}</td>
+            <td>{{ campaign.budget | currency }}</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$0.00</td>
+            <td>0.000%</td>
             <td>
               <button class="btn btn-outline-secondary btn-sm" routerLink="/campaign/{{ campaign.id }}/settings">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -53,5 +68,11 @@
             </td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td>Totals: </td>
+          </tr>
+        </tfoot>
     </table>
+    </div>
 </div>

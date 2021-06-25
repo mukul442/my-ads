@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CampaignContentComponent implements OnInit {
 
   campaign: Campaign | undefined;
+  campaign_id = Number(this.router.snapshot.paramMap.get('id'));
 
   constructor(private campaignService: CampaignService,
     private router: ActivatedRoute) { }

@@ -1,34 +1,58 @@
 <app-campaign-header></app-campaign-header>
-<div class="container-fluid">    
+<div class="container-fluid">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" routerLink="/campaign/{{ campaign_id }}/performance">Performance</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/campaign/{{ campaign_id }}/settings">Settings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/campaign/{{ campaign_id }}/content">Content</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/campaign/{{ campaign_id }}/widgets">Widgets</a>
+      </li>
+    </ul>
+    <button class="btn btn-outline-secondary btn-sm m-3" routerLink="/campaign/{{ campaign_id }}/content/create"> Create Content
+    </button>    
       <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Campaign</th>
-            <th scope="col">Url</th>
-            <th scope="col">Title</th>
-            <th scope="col">Brand Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Added Date</th>
+            <th scope="col">Content Preview</th>
+            <th scope="col">Status</th>
+            <th scope="col">Avg. Position</th>
+            <th scope="col">Impressions</th>
+            <th scope="col">Clicks</th>
+            <th scope="col">Conversions</th>
+            <th scope="col">CTR</th>
+            <th scope="col">Avg.CPC</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Return</th>
+            <th scope="col">Profit</th>
+            <th scope="col">Added</th>
+            <th scope="col">Enabled</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody *ngIf="campaign">
             <tr *ngFor="let data of campaign.content">
               <th scope="row">{{ data.id }}</th>
-              <td>{{ data.campaign }}</td>
-              <td>{{ data.url }}</td>
-              <td>{{ data.title }}</td>
-              <td>{{ data.brand_name }}</td>
-              <td>{{ data.description }}</td>
+              <td>Content preview TBM </td>
+              <td>Pending</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>$0.00</td>
+              <td>$0.00</td>
+              <td>$0.00</td>
+              <td>$0.00</td>
               <td>{{ data.added_date | date }}</td>
+              <td><input class="form-check-input" type="checkbox" checked></td>
               <td>
-                <button class="btn btn-outline-secondary btn-sm" routerLink="/campaign/{{ data.campaign }}/content/create">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
-                    <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z"/>
-                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
-                  </svg>
-                </button>
                 <button class="btn btn-outline-secondary btn-sm" routerLink="/campaign/{{ data.campaign }}/content/{{ data.id }}">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -44,5 +68,10 @@
               </td>
             </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td>Totals: </td>
+          </tr>
+        </tfoot>
     </table>
 </div>

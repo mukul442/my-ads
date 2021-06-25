@@ -25,7 +25,7 @@ import { CampaignEditContentComponent } from './campaign-edit-content/campaign-e
     CampaignWidgetsComponent,
     CampaignHeaderComponent,
     CampaignAddContentComponent,
-    CampaignEditContentComponent
+    CampaignEditContentComponent,
   ],
   imports: [
     CommonModule,

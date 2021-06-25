@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-campaign-widgets',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./campaign-widgets.component.css']
 })
 export class CampaignWidgetsComponent implements OnInit {
+  campaign_id = Number(this.router.snapshot.paramMap.get('id'));
 
-  constructor() { }
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
