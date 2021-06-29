@@ -7,12 +7,34 @@
           <input type="text" class="form-control" formControlName="name">
         </div>
         <div class="mb-3">
-          <label class="form-label">CPC</label>
+          <label class="form-label">Bid Type</label>
+          <select class="form-select" formControlName="bidType">
+            <option selected>CPC</option>
+            <option value="CPM">vCPM</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Bid Amount</label>
           <input type="number" class="form-control" formControlName="cpc">
         </div>
         <div class="mb-3">
-          <label class="form-label">Budget</label>
+          <label class="form-label">Budget Amount</label>
           <input type="number" class="form-control" formControlName="budget">
+        </div>
+        <label class="form-label">Pacing</label>
+        <div class="mb-3">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="On" name="pacing" formControlName="pacing" id="On">
+            <label class="form-check-label" for="On">
+              On
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Off" name="pacing" formControlName="pacing" id="Off">
+            <label class="form-check-label" for="Off">
+              Off
+            </label>
+          </div>
         </div>
         <div formGroupName="scheduling">
           <h2>Scheduling</h2>
@@ -23,6 +45,94 @@
           <div class="mb-3">
             <label class="form-label">End Date</label>
             <input type="date" class="form-control" formControlName="endDate">
+          </div>
+        </div>
+        <div formGroupName="targeting">
+          <h2>Targeting</h2>
+          <label class="form-label">Traffic Types</label>
+          <div class="mb-3" formGroupName="trafficTypes">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" value="Ad Block" id="adBlock" name="adBlock" formControlName="adBlock">
+              <label class="form-check-label" for="adBlock">Ad Block</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" value="Native" id="native" name="native" formControlName="native" checked>
+              <label class="form-check-label" for="native">Native</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" value="Push Notifications" id="pushNotification" name="pushNotification" formControlName="pushNotification">
+              <label class="form-check-label" for="pushNotification">Push Notifications</label>
+            </div>
+          </div>
+          <label class="form-label">Country Targeting</label>
+          <div class="mb-3">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="All Countries" name="countryTarget" formControlName="countryTarget" id="allCountries">
+              <label class="form-check-label" for="allCountries">
+                All Countries
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="Include" name="countryTarget" formControlName="countryTarget" id="Include">
+              <label class="form-check-label" for="Include">
+                Include
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="Exclude" name="countryTarget" formControlName="countryTarget" id="Exclude">
+              <label class="form-check-label" for="Exclude">
+                Exclude
+              </label>
+            </div>
+          </div>
+          <label class="form-label">Zip Code Targeting</label>
+          <div class="mb-3">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="All Zip Codes" name="zipTarget" formControlName="zipTarget" id="allZipCodes">
+              <label class="form-check-label" for="allZipCodes">
+                All Zip Codes
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="Include" name="zipTarget" formControlName="zipTarget" id="Includezip">
+              <label class="form-check-label" for="Includezip">
+                Include
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="Exclude" name="zipTarget" formControlName="zipTarget" id="Excludezip">
+              <label class="form-check-label" for="Excludezip">
+                Exclude
+              </label>
+            </div>
+          </div>
+          <label class="form-label">Metro Targeting</label>
+          <div class="mb-3">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="All Cities" name="metroTarget" formControlName="metroTarget" id="allCities">
+              <label class="form-check-label" for="allCities">
+                All Cities
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="Include" name="metroTarget" formControlName="metroTarget" id="Includemetro">
+              <label class="form-check-label" for="Includemetro">
+                Include
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" value="Exclude" name="metroTarget" formControlName="metroTarget" id="Excludemetro">
+              <label class="form-check-label" for="Excludemetro">
+                Exclude
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Language Targeting</label>
+            <select class="form-select" formControlName="languageTarget">
+              <option selected>English</option>
+              <option value="French">French</option>
+            </select>
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

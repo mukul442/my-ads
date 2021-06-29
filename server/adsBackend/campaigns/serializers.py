@@ -10,4 +10,4 @@ class CampaignSerializer(serializers.ModelSerializer):
     content = ContentSerializer(many=True, read_only=True)
     class Meta:
         model = Campaign
-        fields = ['id', 'name', 'cpc', 'budget', 'scheduling', 'content']
+        fields = ['id', 'name', 'bidType', 'cpc', 'budget', 'pacing', 'scheduling', 'targeting', 'content']
