@@ -19,6 +19,7 @@ class Campaign(models.Model):
     cpc = models.FloatField()
     budget = models.FloatField()
     pacing = models.CharField(max_length=100 ,choices=PACING)
+    photoFileName = models.CharField(max_length=100)
     scheduling =  models.JSONField()
     targeting =  models.JSONField()
 

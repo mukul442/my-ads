@@ -9,5 +9,6 @@ router.register('content', views.ContentView, basename='content')
 
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('SaveFile', views.SaveFile)
 ]

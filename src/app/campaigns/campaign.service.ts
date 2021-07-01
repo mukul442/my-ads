@@ -10,6 +10,7 @@ export class CampaignService {
 
   private campaignUrl = "http://127.0.0.1:8000/campaign/";
   private contentUrl = "http://127.0.0.1:8000/content/";
+  private PhotoUrl = "http://127.0.0.1:8000/media/";
 
   constructor(private http: HttpClient) { }
 
