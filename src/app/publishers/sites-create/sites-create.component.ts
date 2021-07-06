@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { PublisherService } from '../publisher.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sites-create',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SitesCreateComponent implements OnInit {
 
-  constructor() { }
+  siteForm = new FormGroup({
+    siteName: new FormControl('')
+  })
+
+  constructor(private publisherService: PublisherService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  addSite() {
+    this.publisherService.addSites(this.siteForm.value).subscribe((response) => {
+      this.siteForm.reset()
+      this.router.navigate(['/sites/list'])
+    })
   }
 
 }

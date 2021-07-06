@@ -1,1 +1,8 @@
-<p>sites-create works!</p>
+<app-publisher-header></app-publisher-header>
+<div class="container mt-3">
+    <form [formGroup]="siteForm" class="w-50" (ngSubmit)="addSite()">
+        <label for="siteName" class="form-label">Site Name</label>
+        <input type="url" class="form-control" placeholder="Enter your website url" formControlName="siteName">
+        <button type="submit" class="btn btn-success mt-3">Submit</button>
+    </form>
+</div>
